@@ -27,3 +27,27 @@ Example: After "I love," the model may predict:
 + "Dogs" (5% likely)
 
 ✅ In essence: GPT predicts the next token based on the input and previous outputs, generating responses one piece at a time. This autoregressive approach allows it to produce coherent and context-aware text.
+
+
+
+## Summary of our discussion about Token Generation in GPT models:
+
+### Token Generation Process:
+
+GPT generates text one token at a time in an autoregressive manner.
+Each token generated depends on all previous tokens, forming a sequential process.
+Parallelism in Computation:
+
+Even though the model generates tokens one-by-one, the internal computations (like matrix multiplications and self-attention) are parallelized on GPUs.
+GPUs allow the model to perform many operations at once, making it fast despite processing tokens sequentially.
+Efficient GPU Usage:
+
+GPUs handle massive matrix operations and probability calculations in parallel, speeding up the generation process.
+Key-value caching allows the model to remember past computations, improving efficiency.
+Scaling for Large Models and Users:
+
+To support billions of users, companies need huge GPU investments to handle both model training and inference.
+More models or larger models require even more GPU power.
+
+
+In summary: GPT generates tokens one at a time, but each generation step relies on massive parallel processing on GPUs to ensure fast and efficient text generation.
